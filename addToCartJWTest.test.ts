@@ -1,8 +1,7 @@
-import { groupPage } from "./pageObject";
+
 import {BasePage} from "./basePageJW"; 
 import {Builder, By, Capabilities, promise, until, WebDriver,} from "selenium-webdriver";
 const chromedriver = require("chromedriver");
-const groupOne = new groupPage();
 const { Key } = require("selenium-webdriver");
 
 /*This test adds a number of shorts to the cart 

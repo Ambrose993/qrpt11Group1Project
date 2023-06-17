@@ -3,7 +3,7 @@ import {Builder, By, Capabilities, promise, until, WebDriver,} from "selenium-we
 const chromedriver = require("chromedriver");
 const { Key } = require("selenium-webdriver");
 
-/*This test attempts a sign-in with known credentials.*/
+/*This test adds a number of shirts to the compare list.*/
 
   const driver: WebDriver = new Builder()
   .withCapabilities(Capabilities.chrome())
@@ -15,11 +15,16 @@ const { Key } = require("selenium-webdriver");
       //Locators
         search: By = By.id('search');
         womenSection: By = By.xpath('(//a[@id="ui-id-4"])');
+        tops: By = By.xpath('(//*[@id="narrow-by-list2"]/dd/ol/li[1]/a)');
         bottoms: By = By.xpath(`(//*[@id="narrow-by-list2"]/dd/ol/li[2]/a)`);
+        zoeTank: By = By.xpath('(//*[@id="maincontent"]/div[3]/div[1]/div[3]/ol/li[8]/div/div/strong/a)');
         erikaShort: By = By.xpath('(//a[@class="product-item-link"])');
+        chloeCompeteTank: By = By.xpath('(//*[@id="maincontent"]/div[3]/div[1]/div[3]/ol/li[4]/div/div/strong/a)');
+        breathEasyTank: By = By.xpath('(//*[@id="maincontent"]/div[3]/div[1]/div[3]/ol/li[1]/div/div/strong/a)');
         size28: By = By.xpath(`(//div[@id="option-label-size-143-item-171"])`);
         colorGreen: By = By.xpath(`(//div[@id="option-label-color-93-item-53"])`);
         addToCart: By = By.xpath('(//button[@title="Add to Cart"])');
+        addToCompare: By = By.xpath('(//*[@id="maincontent"]/div[2]/div/div[1]/div[5]/div/a[2]/span)');
         qty: By = By.xpath('(//input[@name="qty"])');
         miniCart: By = By.xpath('(//div[@data-block="minicart"])');
         miniCartQty: By = By.xpath('(//input[@id="cart-item-209177-qty"])');
@@ -27,36 +32,10 @@ const { Key } = require("selenium-webdriver");
         header: By = By.xpath('(//div[@class="header content"])');
         shoppingCart: By = By.xpath('(//*[@id="maincontent"]/div[1]/div[2]/div/div/div/a)');
         discountText: By = By.xpath('(//*[@id="cart-totals"]/div/table/tbody/tr[2]/td/span/span)');
-        signIn: By = By.xpath('(/html/body/div[1]/header/div[1]/div/ul/li[2]/a)');
-        emailField: By = By.xpath('(//*[@id="email"])');
-        passwordField: By = By.xpath('(//*[@id="pass"])');
-        signInBtn: By = By.xpath('(//*[@id="send2"])');
-
-        //Constructor
-            constructor(driver: WebDriver) {
-                super();
-            };   
-            
-};
-  const lPage = new luma(driver)
-  describe("Luma Test", () => {
-      beforeEach(async () => {
-          await lPage.navigate();
-      });
-      afterAll(async () => {
-        await lPage.driver.quit();
-    });
-      // Increase the timeout to 10 seconds (10000 milliseconds)
-      jest.setTimeout(10000);
-      test("Signing in", async () => {
-        await lPage.driver.wait(until.elementLocated(lPage.signIn));
-        await lPage.click(lPage.signIn);
-        await lPage.driver.wait(until.elementLocated(lPage.emailField));
-        await lPage.click(lPage.emailField);
-        await lPage.sendKeys(lPage.emailField, "roni_cost@example.com");
-        await lPage.click(lPage.passwordField);
-        await lPage.sendKeys(lPage.passwordField, "roni_cost@example.com");
-        await lPage.click(lPage.signInBtn);
+        comparisonList: By = By.xpath('(//*[@id="maincontent"]/div[1]/div[2]/div/div/div/a)');
         
-     });
-});
+        
+        //Constructor
+           constructor(driver: WebDriver) {
+            super();
+           }};
