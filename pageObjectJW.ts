@@ -2,14 +2,12 @@ import {BasePage} from "./basePageJW";
 import {Builder, By, Capabilities, promise, until, WebDriver,} from "selenium-webdriver";
 const chromedriver = require("chromedriver");
 const { Key } = require("selenium-webdriver");
-
+export class PageObjectJW extends BasePage {
 /*This test adds a number of shirts to the compare list.*/
 
-  const driver: WebDriver = new Builder()
-  .withCapabilities(Capabilities.chrome())
-  .build();
+  
 
-  class luma extends BasePage {
+  
       
       url: string = "https://magento.softwaretestingboard.com/";
       //Locators
@@ -33,7 +31,10 @@ const { Key } = require("selenium-webdriver");
         shoppingCart: By = By.xpath('(//*[@id="maincontent"]/div[1]/div[2]/div/div/div/a)');
         discountText: By = By.xpath('(//*[@id="cart-totals"]/div/table/tbody/tr[2]/td/span/span)');
         comparisonList: By = By.xpath('(//*[@id="maincontent"]/div[1]/div[2]/div/div/div/a)');
-        
+        signIn: By = By.xpath('(/html/body/div[1]/header/div[1]/div/ul/li[2]/a)');
+        emailField: By = By.xpath('(//*[@id="email"])');
+        passwordField: By = By.xpath('(//*[@id="pass"])');
+        signInBtn: By = By.xpath('(//*[@id="send2"])');
         
         //Constructor
            constructor(driver: WebDriver) {
