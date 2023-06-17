@@ -1,5 +1,5 @@
 import { groupPage } from "./pageObject";
-import {BasePage} from "./basePage"; 
+import {BasePage} from "./basePageJW"; 
 import {Builder, By, Capabilities, promise, until, WebDriver,} from "selenium-webdriver";
 const chromedriver = require("chromedriver");
 const groupOne = new groupPage();

@@ -48,6 +48,7 @@ export class BasePage {
     async getAttribute(elementBy: By, attribute: string): Promise<string> {
         return (await this.getElement(elementBy)).getAttribute(attribute);
     };
+<<<<<<< HEAD
     async sendKeys(elementBy: By, keys) {
         await this.driver.wait(until.elementLocated(elementBy))
         return this.driver.findElement(elementBy).sendKeys(keys)
@@ -56,4 +57,7 @@ export class BasePage {
         await this.driver.wait(until.elementLocated(elementBy));
         return this.driver.findElement(elementBy);
     };
+=======
+
+>>>>>>> e6de8c6a5103b45d4ebcf7cd50a02f840a963b47
 };
