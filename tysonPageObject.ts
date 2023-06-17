@@ -1,8 +1,8 @@
 import {By, WebDriver} from 'selenium-webdriver';
-import { BasePagee } from './tsBasePage';
+import { BasePage } from './basePage';
 const chromedriver = require("chromedriver");
 
-export class groupPage extends BasePagee {
+export class groupPage extends BasePage {
     //selectors
 driver: WebDriver;
 url: string = "https://magento.softwaretestingboard.com/";
